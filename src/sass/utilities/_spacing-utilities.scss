@@ -1,0 +1,67 @@
+@use "../abstracts" as *;
+
+@each $prop, $value in $spacing {
+    .m-#{$prop} {
+        margin: var(--spacing-#{$prop}) !important;
+    }
+
+    .mt-#{$prop} {
+        margin-top: var(--spacing-#{$prop}) !important;
+    }
+
+    .mb-#{$prop} {
+        margin-bottom: var(--spacing-#{$prop}) !important;
+    }
+
+    .ml-#{$prop} {
+        margin-left: var(--spacing-#{$prop}) !important;
+    }
+
+    .mr-#{$prop} {
+        margin-right: var(--spacing-#{$prop}) !important;
+    }
+
+    .mx-#{$prop} {
+        margin-inline: var(--spacing-#{$prop}) !important;
+    }
+
+    .my-#{$prop} {
+        margin-block: var(--spacing-#{$prop}) !important;
+    }
+
+    .p-#{$prop} {
+        padding: var(--spacing-#{$prop}) !important;
+    }
+
+    .pt-#{$prop} {
+        padding-top: var(--spacing-#{$prop}) !important;
+    }
+
+    .pb-#{$prop} {
+        padding-bottom: var(--spacing-#{$prop}) !important;
+    }
+
+    .pl-#{$prop} {
+        padding-left: var(--spacing-#{$prop}) !important;
+    }
+
+    .pr-#{$prop} {
+        padding-right: var(--spacing-#{$prop}) !important;
+    }
+
+    .px-#{$prop} {
+        padding-inline: var(--spacing-#{$prop}) !important;
+    }
+
+    .py-#{$prop} {
+        padding-block: var(--spacing-#{$prop}) !important;
+    }
+}
+
+.mx-auto {
+    margin-inline: auto;
+}
+
+.my-auto {
+    margin-block: auto;
+}

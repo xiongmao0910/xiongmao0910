@@ -1,0 +1,16 @@
+.notfound {
+    --w-container: 40rem;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &-img {
+        width: min(100%, 15rem);
+        height: auto;
+        object-fit: cover;
+    }
+}

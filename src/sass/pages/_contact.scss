@@ -1,0 +1,79 @@
+@use "../abstracts" as *;
+
+.contact {
+    &-container {
+        --w-container: 40rem;
+    }
+
+    &-info {
+        --gap: 0;
+        padding-block: 1rem;
+
+        &-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            color: var(--clr-white);
+            cursor: pointer;
+
+            @include mq(small) {
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            &:hover {
+                background-color: var(--clr-primary-500);
+            }
+
+            svg {
+                font-size: var(--fs-500);
+            }
+
+            span {
+                font-size: var(--fs-200);
+            }
+        }
+    }
+
+    &-form {
+        --flow-spacer: 1.5rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        @include mq(small) {
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        &-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            textarea {
+                height: 15vh;
+                resize: none;
+            }
+        }
+
+        &-label {
+            text-transform: capitalize;
+        }
+
+        &-control {
+            outline: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            border: thin solid rgba(0, 0, 0, 0.7);
+
+            &:focus {
+                border-color: var(--clr-primary-500);
+            }
+        }
+    }
+}

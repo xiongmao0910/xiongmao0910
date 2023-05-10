@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.container {
+    --w-container-default: 64rem;
+    --p-container: 1.25rem;
+
+    @include mq(small) {
+        --p-container: 2rem;
+    }
+
+    width: min(
+        100% - var(--p-container),
+        var(--w-container, var(--w-container-default))
+    );
+    margin-inline: auto;
+
+    &[data-size="sm"] {
+        --w-container-default: 30rem;
+    }
+
+    &[data-size="md"] {
+        --w-container-default: 45rem;
+    }
+
+    &[data-size="lg"] {
+        --w-container-default: 65rem;
+    }
+
+    &[data-size="xl"] {
+        --w-container-default: 80rem;
+    }
+
+    &[data-size="xxl"] {
+        --w-container-default: 86rem;
+    }
+}

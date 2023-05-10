@@ -1,0 +1,20 @@
+.w {
+    &-full {
+        display: block;
+        width: 100% !important;
+    }
+
+    &-auto {
+        width: auto !important;
+    }
+}
+
+.h {
+    &-full {
+        height: 100% !important;
+    }
+
+    &-auto {
+        height: auto !important;
+    }
+}

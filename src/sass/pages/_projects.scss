@@ -1,0 +1,8 @@
+.projects {
+    &-list {
+        --gap: 1rem;
+        --w-column: 18.75rem;
+        width: min(100%, 65rem);
+        margin-inline: auto;
+    }
+}

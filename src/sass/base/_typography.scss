@@ -1,0 +1,41 @@
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ff-heading, var(--ff-default));
+    font-size: var(--fs);
+    font-weight: var(--fw, var(--fw-bold));
+    font-stretch: 100%;
+    line-height: var(--lh-heading);
+}
+
+h5,
+h6 {
+    font-family: var(--ff-heading, var(--ff-default));
+}
+
+h1 {
+    --fs: var(--fs-900);
+    --fw: var(--fw-black);
+}
+
+h2 {
+    --fs: var(--fs-800);
+}
+
+h3 {
+    --fs: var(--fs-700);
+}
+
+h4 {
+    --fs: var(--fs-600);
+}
+
+small,
+.text-small {
+    font-size: var(--fs-200);
+}
+
+.text-tiny {
+    font-size: var(--fs-100);
+}

@@ -1,0 +1,201 @@
+@use "../abstracts" as *;
+
+/**
+* Flex box
+*/
+.flex {
+    display: flex;
+    gap: var(--gap, 0.75em);
+
+    &-wrap {
+        flex-wrap: wrap;
+    }
+
+    &-nowrap {
+        flex-wrap: nowrap;
+    }
+
+    &-wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    &-col {
+        flex-direction: column;
+    }
+
+    &-col-reverse {
+        flex-direction: column-reverse;
+    }
+
+    &-row {
+        flex-direction: row;
+    }
+
+    &-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &-1 {
+        flex: 1;
+    }
+}
+
+.inline-flex {
+    display: inline-flex;
+    gap: var(--gap, 0.75em);
+}
+
+.justify {
+    &-start {
+        justify-content: flex-start;
+    }
+
+    &-center {
+        justify-content: center;
+    }
+
+    &-end {
+        justify-content: flex-end;
+    }
+
+    &-between {
+        justify-content: space-between;
+    }
+
+    &-around {
+        justify-content: space-around;
+    }
+
+    &-evenly {
+        justify-content: space-evenly;
+    }
+}
+
+.items {
+    &-center {
+        align-items: center;
+    }
+
+    &-start {
+        align-items: start;
+    }
+
+    &-end {
+        align-items: end;
+    }
+
+    &-stretch {
+        align-items: stretch;
+    }
+}
+
+/**
+* Grid
+*/
+.grid {
+    --w-column-default: 3rem;
+    --col-count-default: 2;
+
+    display: grid;
+    gap: var(--gap, 0.75em);
+
+    @include mq(small) {
+        --col-count-default: 4;
+    }
+
+    &[data-columns="columns"] {
+        grid-template-columns: repeat(
+            var(--col-count, var(--col-count-default)),
+            1fr
+        );
+    }
+
+    &[data-columns="fill"] {
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(var(--w-column, var(--w-column-default)), 1fr)
+        );
+    }
+
+    &[data-columns="fit"] {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(var(--w-column, var(--w-column-default)), 1fr)
+        );
+    }
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.none {
+    display: none;
+}
+
+/**
+* Responsive
+*/
+.md\:none {
+    @include mq(medium) {
+        display: none !important;
+    }
+}
+
+.md\:block {
+    display: none;
+
+    @include mq(medium) {
+        display: block !important;
+    }
+}
+
+.md\:flex {
+    display: none;
+
+    @include mq(medium) {
+        display: flex !important;
+    }
+}
+
+.md\:grid {
+    display: none;
+
+    @include mq(medium) {
+        display: grid !important;
+    }
+}
+
+.lg\:none {
+    @include mq(large) {
+        display: none !important;
+    }
+}
+
+.lg\:block {
+    display: none;
+
+    @include mq(large) {
+        display: block !important;
+    }
+}
+
+.lg\:flex {
+    display: none;
+
+    @include mq(large) {
+        display: flex !important;
+    }
+}
+
+.lg\:grid {
+    display: none;
+
+    @include mq(large) {
+        display: grid !important;
+    }
+}

@@ -1,0 +1,47 @@
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-body, var(--clr-white));
+    color: var(--clr-body, var(--clr-black));
+    font-family: var(--ff-body, var(--ff-default));
+    font-size: var(--fs-body, 1rem);
+    font-weight: var(--fw-body, 400);
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+img,
+picture,
+video,
+iframe {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}

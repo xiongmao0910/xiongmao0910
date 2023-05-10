@@ -1,0 +1,64 @@
+@use "../abstracts" as *;
+
+.button {
+    display: inline-flex;
+    gap: 0.75em;
+    align-items: center;
+    padding: 0.5em 1em;
+    font-family: var(--ff-button, var(--ff-default));
+    font-size: var(--fs-button);
+    font-weight: var(--fw-button);
+    line-height: var(--lh-button);
+    text-transform: capitalize;
+    background-color: var(--bg);
+    color: var(--clr);
+    border: thin solid var(--clr-border);
+    border-radius: 0.25em;
+    cursor: pointer;
+    transition: background-color 350ms, color 350ms, border-color 350ms;
+
+    &[button-variant="contained"] {
+        --bg: var(--bg-button-contained, var(--bg-button-default));
+        --clr: var(--clr-button-contained, var(--clr-button-default));
+        --clr-border: var(--bg);
+
+        &:hover {
+            --bg: var(
+                --bg-button-contained-hover,
+                var(--bg-button-hover-default)
+            );
+        }
+    }
+
+    &[button-variant="outlined"] {
+        --bg: transparent;
+        --clr: var(--clr-button-outlined, var(--clr-button-outlined-default));
+        --clr-border: var(--clr);
+
+        &:hover {
+            --bg: var(--bg-button-outlined-hover, var(--bg-button-default));
+            --clr: var(--clr-button-outlined-hover, var(--clr-button-default));
+            --clr-border: var(--bg);
+        }
+    }
+
+    @each $color, $shade in $colors {
+        &[button-color="#{$color}"] {
+            --bg-button-contained: var(--clr-#{$color}-600);
+            --clr-button-contained: var(--clr-white);
+            --bg-button-contained-hover: var(--clr-#{$color}-400);
+            --clr-button-outlined: var(--clr-#{$color}-600);
+            --bg-button-outlined-hover: var(--clr-#{$color}-600);
+            --clr-button-outlined-hover: var(--clr-white);
+        }
+    }
+
+    &[button-color="primary"] {
+        --bg-button-contained: var(--clr-primary-900);
+        --clr-button-contained: var(--clr-white);
+        --bg-button-contained-hover: var(--clr-primary-500);
+        --clr-button-outlined: var(--clr-primary-900);
+        --bg-button-outlined-hover: var(--clr-primary-900);
+        --clr-button-outlined-hover: var(--clr-white);
+    }
+}

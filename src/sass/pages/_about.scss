@@ -1,0 +1,55 @@
+@use "../abstracts" as *;
+
+.about {
+    &-container {
+        display: flex;
+        gap: 3.125rem;
+        flex-direction: column;
+        align-items: center;
+
+        @include mq(medium) {
+            flex-direction: row;
+            align-items: start;
+        }
+    }
+
+    &-content {
+        --flow-spacer: 1rem;
+
+        @include mq(medium) {
+            flex: 3;
+        }
+    }
+
+    &-list {
+        --col-count: 2;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: capitalize;
+
+            &::before {
+                content: "▹";
+                color: var(--clr-primary-500);
+                font-size: var(--fs-400);
+                line-height: 1;
+            }
+        }
+    }
+
+    &-img {
+        @include mq(medium) {
+            flex: 2;
+        }
+
+        img {
+            width: 100%;
+            max-width: 18.75rem;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+    }
+}
