@@ -7,7 +7,7 @@ export function Projects() {
     return (
         <section className="section projects">
             <div className="projects-container container" data-size="xxl">
-                {projects.length > 0 && (
+                {projects?.length > 0 && (
                     <div className="projects-list grid" data-columns="fill">
                         {projects.map((project) => (
                             <div key={project.id}>
