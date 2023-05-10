@@ -29,8 +29,9 @@ export function useGetCollection({ collectionName }) {
             setLoading(false);
         }, 3000);
 
+        getData();
+
         return () => {
-            getData();
             clearTimeout(timer);
         };
     }, []);
